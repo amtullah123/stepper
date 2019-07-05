@@ -15,7 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatRadioModule} from '@angular/material/radio';
 import { MyDatePickerModule } from 'mydatepicker';
 import { MatRippleModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +39,9 @@ import { MatRippleModule, MatDatepickerModule, MatNativeDateModule } from '@angu
       MatDatepickerModule, 
       MatNativeDateModule ,
       MatRippleModule,
-      MatIconModule
-      
-  
+      MatIconModule,
+      MatGridListModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

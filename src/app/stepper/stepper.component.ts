@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 
 
 @Component({
@@ -8,7 +8,13 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./stepper.component.css']
 })
 export class StepperComponent implements OnInit {
-  hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+  hide:true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;

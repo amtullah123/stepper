@@ -6,7 +6,15 @@
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Fill out your details</ng-template>
-                   
+                       
+        <div class="form-group">
+                <div class="text-center">
+                  <img id="output" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <br/>
+                  <input type="file" accept="image/*" onchange="loadFile(event)" class="text-center center-block file-upload">
+                </div>
+            </div>  
+            <br/> 
             <label>First Name </label>
             <mat-form-field>
                 <input matInput placeholder="First name" formControlName="firstCtrl" required #name>
@@ -15,6 +23,10 @@
             <mat-form-field>
                     <input matInput placeholder="Last name" formControlName="firstCtrl" required #name>
                 </mat-form-field><br/>
+                <label>Mobile</label>
+                <mat-form-field>
+                        <input matInput placeholder="Mobile" formControlName="firstCtrl" required #number>
+                    </mat-form-field><br/>
                                 <label>Gender</label>
                                 <mat-radio-group formControlName="gender">
                                   <mat-radio-button value="male">Male</mat-radio-button>
@@ -34,7 +46,8 @@
                           <label>Email</label>
                           <mat-form-field>
                                 <input matInput placeholder="Enter your email" [formControl]="email" required>
-                                    </mat-form-field>
+                                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                              </mat-form-field>
                                     <br/>
                                     <label>Password</label>     
                                     <mat-form-field>
@@ -44,42 +57,134 @@
                                             </button>
                                           </mat-form-field>
                                           <br/>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-stroked-button matStepperNext>Next</button>
             </div>
         </form>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup" optional>
         <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Specialization</ng-template>
-            <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-                    <div fxFlex="20%">
+          <div class="card-container">
+            <mat-card class="example-card">
+             
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-actions>
+                <button mat-button>Add</button>
+               
+              </mat-card-actions>
+             
+            </mat-card>
+            <mat-card class="example-card">
+             
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-actions>
+                  <button mat-button>Add</button>
+                 
+                </mat-card-actions>
+             
+            </mat-card>
+            <mat-card class="example-card">
+             
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-actions>
+                  <button mat-button>Add</button>
+                 
+                </mat-card-actions>
+             
+            </mat-card>
+           
+            <mat-card class="example-card">
+             
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-actions>
+                  <button mat-button>Add</button>
+                 
+                </mat-card-actions>
+               
+              </mat-card>
+              <mat-card class="example-card">
+               
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-actions>
+                    <button mat-button>Add</button>
+                   
+                  </mat-card-actions>
+               
+              </mat-card>
+              <mat-card class="example-card">
+               
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-actions>
+                    <button mat-button>Add</button>
+                   
+                  </mat-card-actions>
+               
+              </mat-card>
+          </div>
+            <!-- <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+                    <div fxFlex="30%">
                       <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg">
                     </div>
-                    <div fxFlex="20%">
+                    <div fxFlex="30%">
                       <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/LTLE4QGRVQ.jpg">
                     </div>
-                    <div fxFlex="20%">
+                    <div fxFlex="30%">
                       <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/R926LU1YEA.jpg">
                     </div>
-                    <div fxFlex="20%">
+                    <div fxFlex="30%">
                       <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/U9PP3KXXY2.jpg">
                     </div>
-                  </div>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                  </div> -->
+            <div> 
+                <button mat-stroked-button matStepperPrevious>Back</button>
+                <button mat-stroked-button matStepperNext>Next</button>
             </div>
         </form>
     </mat-step>
     <mat-step [stepControl]="thirdFormGroup" optional>
             <form [formGroup]="thirdFormGroup">
                 <ng-template matStepLabel>Specialization</ng-template>
+                <div class="form-group">
+                  <div class="text-center">
+                    <img id="output" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                    <br/>
+                    <input type="file" accept="image/*" onchange="loadFile(event)" class="text-center center-block file-upload">
+                  </div>
+              </div>   
+              <br/>
+                <label>Clinic Name </label>
+            <mat-form-field>
+                <input matInput placeholder="Clinic name" formControlName="thirdCtrl" required #name>
+            </mat-form-field><br/>
+            <mat-label>State</mat-label>
+            <mat-form-field>
+                    <select matNativeControl required>
+                            <option value="choose">Choose</option>
+                      <option value="andhra Pradesh">Andhra Pradesh</option>
+                      <option value="telangana">Telangana</option>
+                      <option value="uttar pradesh">Uttar Pradesh</option>
+                      <option value="madhya Pradesh">Madhya Pradesh</option>
+                    </select>
+                  </mat-form-field><br/>
+                  <mat-label>City</mat-label>
                 <mat-form-field>
-                    <input matInput placeholder="Address" formControlName="thirdCtrl" required>
-                </mat-form-field>
+                    <input matInput placeholder="City" formControlName="thirdCtrl" required>
+                </mat-form-field><br/>
+                <mat-label>Area</mat-label>
+              <mat-form-field>
+                  <input matInput placeholder="Area" formControlName="thirdCtrl" required>
+              </mat-form-field><br/>
+                  <mat-label>Pincode</mat-label>
+                <mat-form-field>
+                    <input matInput placeholder="Pincode" formControlName="thirdCtrl" required>
+                </mat-form-field><br/>
+              <mat-label>Mobile</mat-label>
+            <mat-form-field>
+                <input matInput placeholder="Mobile" formControlName="thirdCtrl" required>
+            </mat-form-field><br/>
                 <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                    <button mat-stroked-button matStepperPrevious>Back</button>
+                    <button mat-stroked-button matStepperNext>Next</button>
                 </div>
             </form>
         </mat-step>
